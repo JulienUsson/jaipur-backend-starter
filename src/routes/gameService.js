@@ -3,38 +3,61 @@ import { shuffle } from "lodash"
 
 // Créer et retourne un deck mélangé avec 3 chameaux en moins.
 export function initDeck() {
-    const tableau = [];
-    let i;
-    for(i=0; i<6; i++)
-      tableau.push('Diamond');
-    for(i=0; i<6; i++)
-        tableau.push('Gold');
-    for(i=0; i<6; i++)
-      tableau.push('Silver');
-    for(i=0; i<8; i++)
-      tableau.push('Cloth');
-    for(i=0; i<8; i++)
-      tableau.push('Spice');
-    for(i=0; i<10; i++)
-      tableau.push('Leather');
-    for(i=0; i<11; i++)
-      tableau.push('Camel');
+  const tableau = [];
+  let i;
+  for(i=0; i<6; i++)
+    tableau.push('Diamond');
+  for(i=0; i<6; i++)
+      tableau.push('Gold');
+  for(i=0; i<6; i++)
+    tableau.push('Silver');
+  for(i=0; i<8; i++)
+    tableau.push('Cloth');.
+  for(i=0; i<8; i++)
+    tableau.push('Spice');
+  for(i=0; i<10; i++)
+    tableau.push('Leather');
+  for(i=0; i<11-3; i++) // Car 3 chameaux en moins
+    tableau.push('Camel');
 
-    
+  // Fonction de shuffle
+  /*
+  let curId = tableau.length;
+  while (0 !== curId) {
+    let randId = Math.floor(Math.random() * curId);
+    curId -= 1;
+    let tmp = tableau[curId];
+    tableau[curId] = tableau[randId];
+    tableau[randId] = tmp;
+  }*/
+  shuffle(deck);
+
   return tableau;
 }
 
 // Pioche x cartes d'un deck.
 export function drawCards(deck, count = 1) {
-  // TODO
-  // Créer un tableau vide
-  // Pour chaque carte à piocher:
-  //  Retirer la carte piochée du deck et la mettre dans le tableau
-  // Retourner le tableau contenant les cartes piochées
+  const main = [];
+  let i;
+  for(i=0; i<count; i++)
+  {
+    main.push(tableau.shift()); //Shift c'est le début du deck, Pop la fin 
+  }
+
+  return main;
 }
 
 // Déplace les chameaux de la main d'un joueur (_players[i].hand) vers son enclos (_players[i].camelsCount).
 export function putCamelsFromHandToHerd(game) {
+  let i;
+  let j;
+  for(i=0; i<2; i++)
+  {
+    if( _players[i].camelscount != 0)
+    {
+      //les deplacer
+    }
+  }
   // TODO
   // Pour chaque joueur:
   //  Pour chaque chameau dans la main du joueur
