@@ -1,3 +1,4 @@
+import { expectCt } from "helmet"
 import request from "supertest"
 import app from "../app"
 
@@ -6,5 +7,6 @@ describe("Health check router", () => {
     const response = await request(app).get("/health")
     expect(response.statusCode).toBe(200)
     expect(response.body).toStrictEqual({ health: "ok" })
+    expect(1).toEqual(1)
   })
 })
