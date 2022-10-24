@@ -10,7 +10,7 @@ jest.mock("../database")
 // Prevent shuffle for tests
 jest.mock("lodash")
 lodash.shuffle.mockImplementation(x=>x) // mock = fonction identité. 
-// Ici, ca neutralise la fonction shuffle en lui disant qu'elle renvoie la même chose que l'entre
+// Ici, ca neutralise la fonction shuffle en lui disant qu'elle renvoie la même chose que l'entrée
 
 
 afterEach(() => {
