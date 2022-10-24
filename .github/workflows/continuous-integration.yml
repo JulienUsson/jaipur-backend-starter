@@ -1,10 +1,11 @@
 name: Continuous integration
-on: [push]
+on: [push, pull-request]
 jobs:
   test:
-    run: npm run lint
     runs-on: ubuntu-latest
     steps:
+      - name: ESL 
+        run: npm run lint
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Use Node.js
