@@ -1,5 +1,11 @@
 name: Continuous integration
-on: [push]
+on:
+  push:
+    master:
+  pull_request:
+    - 'feature/**'
+    - 'bugfix/**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,3 +20,5 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
+      - name: ESLint
+        run: npm run lint
