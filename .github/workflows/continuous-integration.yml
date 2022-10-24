@@ -2,6 +2,7 @@ name: Continuous integration
 on: [push]
 jobs:
   test:
+    run: npm run lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -14,5 +15,3 @@ jobs:
         run: npm install
       - name: Run tests
         run: npm run test
-      - name: ESLint
-        run: npm run lint
