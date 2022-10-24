@@ -1,11 +1,5 @@
 name: Continuous integration
-on:
-  push:
-    master:
-  pull_request:
-    - 'feature/**'
-    - 'bugfix/**'
-
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
