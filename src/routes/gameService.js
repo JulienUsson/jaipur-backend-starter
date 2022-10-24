@@ -12,7 +12,7 @@ export function initDeck() {
   for(i=0; i<6; i++)
     tableau.push('Silver');
   for(i=0; i<8; i++)
-    tableau.push('Cloth');.
+    tableau.push('Cloth');
   for(i=0; i<8; i++)
     tableau.push('Spice');
   for(i=0; i<10; i++)
