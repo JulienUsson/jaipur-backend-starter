@@ -23,3 +23,9 @@ jobs:
         run: npm run test 
       - name: ESL 
         run: npm run lint
+      - name: Produce Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artefact
+          path: artefact.txt
+
