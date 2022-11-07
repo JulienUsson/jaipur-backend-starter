@@ -27,5 +27,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: artefact
-          path: coverage/**
+          path: coverage/** #moi j'avais "/coverage" qui avait l'air de fonctionner
 
